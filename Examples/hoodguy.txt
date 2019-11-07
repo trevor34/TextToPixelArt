@@ -1,0 +1,11 @@
+mirror auto size:30 c0:#000 c1:#fff c2:#bb1717 c3:#fbff00
+2,c1 6,c2
+1,c1 7,c2
+4,c2 4,c0
+3,c2 5,c0
+2,c2 2,c0 2,c3 2,c0
+r3
+2,c2 6,c0
+r3
+4,c1 2,c0 2,c1
+r3
