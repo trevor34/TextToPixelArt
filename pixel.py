@@ -42,7 +42,6 @@ del colorfile[0]
 tk.ROUND = tk.BUTT # Sets brush end shape to square
 turt = turtle.Turtle()
 turt._tracer(0, 0) # Sets so it does not take time to trace. Puts picture imediately
-turt.color("Black")
 
 
 turt.speed(0)
@@ -75,18 +74,26 @@ for i in range(len(colorfile)):
 
         for p in range(len(colorfile[i])):
             
-            if re.match(r"r[0-9]+", colorfile[i][p]):
+            if re.match(r"r[0-9]+", colorfile[i][p]): # Repeat for iteration
                     colorfile[i][p] = colorfile[i][p].replace('r', '')
                     clist.pop()
                     for q in range(int(colorfile[i][p])):
                         clist.append(clist[i - 1 + iterative])
 
                     iterative += int(colorfile[i][p]) - 1
+
+            elif re.match(r"[0-9]+,TP", colorfile[i][p]):
+                colorfile[i][p] = colorfile[i][p].split(',')
+                length = int(colorfile[i][p][0])
+
+                for q in range(length):
+                    clist[i + iterative].append('TP')
+
             
             elif re.match(r"[0-9]+,c[0-9]+", colorfile[i][p]):
                 colorfile[i][p] = colorfile[i][p].split(',')
                 colorfile[i][p][1] = colorfile[i][p][1].replace('c', '')
-
+                
                 color = colordata[int(colorfile[i][p][1])]
                 length = int(colorfile[i][p][0])
 
@@ -107,8 +114,12 @@ for i in range(len(clist)):
     y -= size
     turt.pendown()
     for e in clist[i]:
-        turt.color(e)
+        if e == 'TP':
+            turt.penup()
+        else:
+            turt.color(e)
         turt.forward(size)
+        turt.pendown()
     turt.penup()
 
 
