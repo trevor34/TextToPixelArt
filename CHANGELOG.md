@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-		TextToPixelArt - v1.0.0
+		TextToPixelArt - v1.1.0
 		Created by: Trevor W.
 
 		Github: https://github.com/TextToPixelArt/
@@ -18,6 +18,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased] - Upcoming Changes, Current Projects, and 'wish list' items
 - Make the turtle output a .bmp or other image file
+
+## [1.1.0] 2019-11-07
+## Added
+- The option to change the turtle window's background using the new `bg` key. 
+
+## Changed
+- New color declarations, it is no longer bound to the `c<X>` format.
 
 ## [1.0.0] 2019-11-07 - Official Release
 ## Added
